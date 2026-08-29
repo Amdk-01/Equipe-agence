@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ÉQUIPE Agence — agence de communication digitale. Votre image, notre impact.">
+  <title>ÉQUIPE Agence — Communication digitale</title>
+  <style>
+    :root{--blue:#087cff;--dark:#030b14;--dark2:#071522;--light:#f6f8fb;--text:#101828;--muted:#667085;--white:#fff}
+    *{box-sizing:border-box;scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--text);background:var(--light)}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1120px,92%);margin:auto}
+    header{position:fixed;z-index:50;top:0;left:0;right:0;background:rgba(3,11,20,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:900;letter-spacing:.5px}
+    .brand-mark{width:42px;height:42px;border:3px solid var(--blue);border-radius:50%;display:grid;place-items:center;color:var(--blue);font-size:21px;font-weight:900}
+    .brand small{display:block;font-size:10px;letter-spacing:4px;color:#c9d1db;font-weight:500}
+    .links{display:flex;gap:25px;color:#fff;font-size:14px;font-weight:700}
+    .links a:hover{color:var(--blue)}
+    .cta{background:var(--blue);color:#fff;padding:13px 18px;border-radius:30px;font-weight:800;font-size:14px}
+    .menu{display:none;color:#fff;font-size:26px;background:none;border:0}
+    .hero{min-height:720px;padding-top:76px;background:linear-gradient(110deg,#02080f 0%,#071522 52%,#05090d 100%);color:#fff;display:flex;align-items:center}
+    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+    .eyebrow{color:var(--blue);font-weight:900;font-size:13px;letter-spacing:1.5px}
+    h1{font-size:clamp(45px,6vw,72px);line-height:.98;margin:15px 0 22px}
+    h1 span{color:var(--blue)}
+    .hero p{font-size:18px;line-height:1.65;color:#d2d8df;max-width:580px}
+    .buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{padding:14px 20px;border-radius:30px;font-weight:800;border:1px solid rgba(255,255,255,.3)}
+    .btn-primary{background:var(--blue);border-color:var(--blue)}
+    .hero-card{border-radius:24px;overflow:hidden;box-shadow:0 25px 80px rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.12)}
+    .hero-card img{display:block;width:100%;height:auto}
+    section{padding:90px 0}
+    .section-head{text-align:center;margin-bottom:45px}
+    .section-head .eyebrow{font-size:12px}
+    h2{font-size:38px;margin:10px 0}
+    .section-head p{color:var(--muted);max-width:650px;margin:auto;line-height:1.6}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:#fff;border:1px solid #e5e9ef;border-radius:18px;padding:28px;box-shadow:0 8px 25px rgba(16,24,40,.05)}
+    .icon{font-size:30px;color:var(--blue)}
+    .card h3{margin:15px 0 8px;font-size:19px}
+    .card p{color:var(--muted);line-height:1.6;margin:0}
+    .pricing{background:var(--dark);color:#fff}
+    .pricing .section-head p{color:#aeb9c5}
+    .price-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+    .price{background:#fff;color:var(--text);border-radius:17px;padding:25px 18px;display:flex;flex-direction:column}
+    .price.popular{background:linear-gradient(150deg,#06366b,#071b31);color:#fff;border:2px solid var(--blue);transform:translateY(-8px)}
+    .price h3{color:var(--blue);margin:0 0 15px}
+    .price.popular h3{color:#fff}
+    .price ul{padding-left:18px;line-height:1.75;min-height:135px}
+    .amount{font-size:25px;font-weight:900;margin-top:auto}
+    .amount small{font-size:12px;font-weight:500}
+    .price .btn{margin-top:18px;text-align:center;color:#fff;background:var(--blue);border:0}
+    .portfolio{background:#fff}
+    .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .work{height:210px;border-radius:16px;overflow:hidden;position:relative;background:#111}
+    .work img{width:100%;height:100%;object-fit:cover;transition:.3s}
+    .work:hover img{transform:scale(1.05)}
+    .work span{position:absolute;left:14px;bottom:14px;background:rgba(0,0,0,.7);color:#fff;padding:8px 12px;border-radius:20px;font-weight:700}
+    .why{background:linear-gradient(180deg,#06111d,#020912);color:#fff}
+    .why .card{background:transparent;border:0;box-shadow:none;text-align:center;color:#fff}
+    .why .card p{color:#bdc7d1}
+    .contact{background:#fff}
+    .contact-box{background:linear-gradient(120deg,#071522,#020a12);border-radius:25px;padding:45px;color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:30px}
+    .contact-box p{color:#c3ccd6;line-height:1.7}
+    .contact-info{display:grid;gap:12px;align-content:center}
+    .contact-item{padding:14px 16px;background:rgba(255,255,255,.06);border-radius:12px}
+    footer{background:#02070c;color:#aeb7c2;padding:45px 0 20px}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:30px}
+    footer h3{color:#fff}
+    footer a{display:block;margin:10px 0}
+    .copyright{text-align:center;border-top:1px solid #17212c;margin-top:30px;padding-top:18px;font-size:13px}
+    .wa{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;background:#19c463;color:#fff;display:grid;place-items:center;font-size:28px;z-index:60;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+    @media(max-width:900px){
+      .links,.nav-cta{display:none}.menu{display:block}
+      .links.open{display:flex;position:absolute;top:76px;left:0;right:0;background:#030b14;padding:20px;flex-direction:column}
+      .hero-grid,.contact-box{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}
+      .price-grid{grid-template-columns:repeat(2,1fr)}.price.popular{transform:none}
+      .portfolio-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:560px){
+      .grid,.price-grid,.portfolio-grid{grid-template-columns:1fr}
+      section{padding:65px 0}.hero{min-height:auto;padding-bottom:70px}
+      h2{font-size:30px}.contact-box{padding:28px}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav class="container">
+    <a class="brand" href="#accueil">
+      <div class="brand-mark">E</div>
+      <div>ÉQUIPE<small>AGENCE</small></div>
+    </a>
+    <div class="links" id="links">
+      <a href="#accueil">Accueil</a><a href="#apropos">À propos</a><a href="#services">Services</a>
+      <a href="#tarifs">Tarifs</a><a href="#realisations">Réalisations</a><a href="#pourquoi">Pourquoi nous</a><a href="#contact">Contact</a>
+    </div>
+    <a class="cta nav-cta" href="https://wa.me/2250502275509?text=Bonjour%20ÉQUIPE%20Agence%2C%20je%20souhaite%20avoir%20plus%20d'informations." target="_blank">WhatsApp</a>
+    <button class="menu" onclick="document.getElementById('links').classList.toggle('open')">☰</button>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="accueil">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">AGENCE DE COMMUNICATION DIGITALE</div>
+      <h1>Votre image,<br><span>notre impact.</span></h1>
+      <p>Nous aidons les marques et entreprises à se démarquer, à attirer plus de clients et à booster leur croissance grâce à des stratégies digitales efficaces.</p>
+      <div class="buttons">
+        <a class="btn btn-primary" href="https://wa.me/2250502275509?text=Bonjour%20ÉQUIPE%20Agence%2C%20je%20veux%20un%20devis." target="_blank">💬 WhatsApp : 05 02 27 55 09</a>
+        <a class="btn" href="#services">Découvrir nos services ↓</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <img src="assets/hero-mockup.png" alt="Présentation visuelle ÉQUIPE Agence">
+    </div>
+  </div>
+</section>
+
+<section id="apropos">
+  <div class="container">
+    <div class="section-head"><div class="eyebrow">À PROPOS</div><h2>Une équipe au service de votre visibilité</h2><p>ÉQUIPE Agence accompagne les entreprises avec des solutions créatives, accessibles et orientées résultats.</p></div>
+    <div class="grid">
+      <div class="card"><div class="icon">🚀</div><h3>Résultats rapides</h3><p>Des actions ciblées pour transformer votre présence digitale en résultats concrets.</p></div>
+      <div class="card"><div class="icon">👥</div><h3>Équipe passionnée</h3><p>Une équipe jeune, créative et expérimentée à votre service.</p></div>
+      <div class="card"><div class="icon">💡</div><h3>Stratégie sur mesure</h3><p>Des solutions adaptées à vos objectifs et à votre marché.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-head"><div class="eyebrow">NOS SERVICES</div><h2>Des solutions digitales complètes</h2><p>Tout ce qu'il faut pour construire, développer et valoriser votre marque en ligne.</p></div>
+    <div class="grid">
+      <div class="card"><div class="icon">📱</div><h3>Gestion des réseaux sociaux</h3><p>Nous gérons vos réseaux sociaux pour renforcer votre présence en ligne.</p></div>
+      <div class="card"><div class="icon">🎨</div><h3>Création de visuels</h3><p>Des visuels professionnels et créatifs qui captent l'attention.</p></div>
+      <div class="card"><div class="icon">🎬</div><h3>Montage vidéo</h3><p>Reels, TikTok, publicités et contenus vidéo engageants.</p></div>
+      <div class="card"><div class="icon">📣</div><h3>Publicité en ligne</h3><p>Campagnes Facebook, Instagram, TikTok Ads et autres leviers.</p></div>
+      <div class="card"><div class="icon">🌐</div><h3>Création de sites web</h3><p>Sites vitrines et e-commerce modernes, rapides et responsives.</p></div>
+      <div class="card"><div class="icon">📈</div><h3>Stratégie digitale</h3><p>Stratégies sur mesure pour atteindre vos objectifs et augmenter vos ventes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="tarifs">
+  <div class="container">
+    <div class="section-head"><div class="eyebrow">NOS TARIFS</div><h2>Des formules adaptées à vos besoins</h2><p>Des offres simples pour démarrer ou accélérer votre communication digitale.</p></div>
+    <div class="price-grid">
+      <div class="price"><h3>STARTER</h3><ul><li>8 publications / mois</li><li>4 stories / mois</li><li>Calendrier éditorial</li><li>Rapport mensuel</li></ul><div class="amount">25 000 <small>FCFA/mois</small></div><a class="btn" href="https://wa.me/2250502275509?text=Je%20suis%20intéressé%20par%20la%20formule%20STARTER." target="_blank">Commander</a></div>
+      <div class="price"><h3>BUSINESS</h3><ul><li>12 publications / mois</li><li>8 stories / mois</li><li>4 vidéos courtes</li><li>Calendrier éditorial</li><li>Rapport mensuel</li></ul><div class="amount">50 000 <small>FCFA/mois</small></div><a class="btn" href="https://wa.me/2250502275509?text=Je%20suis%20intéressé%20par%20la%20formule%20BUSINESS." target="_blank">Commander</a></div>
+      <div class="price popular"><h3>PREMIUM</h3><ul><li>Gestion complète</li><li>20 publications / mois</li><li>Stories illimitées</li><li>8 vidéos courtes</li><li>Publicité incluse</li><li>Rapport + analyse</li></ul><div class="amount">100 000 <small>FCFA/mois</small></div><a class="btn" href="https://wa.me/2250502275509?text=Je%20suis%20intéressé%20par%20la%20formule%20PREMIUM." target="_blank">Commander</a></div>
+      <div class="price"><h3>SITE WEB</h3><ul><li>Site vitrine professionnel</li><li>Design responsive</li><li>5 pages incluses</li><li>Nom de domaine offert</li><li>Hébergement 1 an</li></ul><div class="amount">75 000 <small>FCFA et +</small></div><a class="btn" href="https://wa.me/2250502275509?text=Je%20veux%20un%20devis%20pour%20un%20site%20web." target="_blank">Demander un devis</a></div>
+      <div class="price"><h3>LOGO & IDENTITÉ</h3><ul><li>Création de logo</li><li>Charte graphique</li><li>Déclinaisons</li><li>Fichiers sources</li></ul><div class="amount">30 000 <small>FCFA et +</small></div><a class="btn" href="https://wa.me/2250502275509?text=Je%20veux%20un%20logo%20et%20une%20identité%20visuelle." target="_blank">Demander un devis</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="portfolio" id="realisations">
+  <div class="container">
+    <div class="section-head"><div class="eyebrow">NOS RÉALISATIONS</div><h2>Des créations qui font la différence</h2><p>Quelques exemples de directions créatives pour marques, produits et campagnes digitales.</p></div>
+    <div class="portfolio-grid">
+      <div class="work"><img src="assets/hero-mockup.png" alt="Création digitale"><span>Branding digital</span></div>
+      <div class="work"><img src="assets/hero-mockup.png" alt="Publicité digitale"><span>Publicité</span></div>
+      <div class="work"><img src="assets/hero-mockup.png" alt="Identité visuelle"><span>Identité visuelle</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="pourquoi">
+  <div class="container">
+    <div class="section-head"><div class="eyebrow">POURQUOI NOUS CHOISIR ?</div><h2>Votre succès est notre priorité</h2></div>
+    <div class="grid">
+      <div class="card"><div class="icon">🚀</div><h3>Résultats rapides</h3><p>Nous mettons en place des actions qui donnent des résultats concrets.</p></div>
+      <div class="card"><div class="icon">🤝</div><h3>Accompagnement</h3><p>Nous vous accompagnons à chaque étape de votre croissance.</p></div>
+      <div class="card"><div class="icon">📊</div><h3>Suivi & analyse</h3><p>Nous analysons les performances pour mieux optimiser.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-box">
+      <div><div class="eyebrow">CONTACTEZ-NOUS</div><h2>Prêt à développer votre image ?</h2><p>Parlons de votre projet et construisons ensemble une communication digitale qui vous ressemble.</p><a class="btn btn-primary" href="https://wa.me/2250502275509?text=Bonjour%20ÉQUIPE%20Agence%2C%20je%20souhaite%20discuter%20de%20mon%20projet." target="_blank">Discuter sur WhatsApp</a></div>
+      <div class="contact-info">
+        <div class="contact-item">📞 05 02 27 55 09</div>
+        <div class="contact-item">💬 WhatsApp professionnel</div>
+        <div class="contact-item">📍 Abidjan, Côte d'Ivoire</div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div><div class="brand"><div class="brand-mark">E</div><div>ÉQUIPE<small>AGENCE</small></div></div><p>Agence de communication digitale spécialisée dans la croissance de votre marque sur le web.</p></div>
+    <div><h3>Liens rapides</h3><a href="#accueil">Accueil</a><a href="#services">Services</a><a href="#tarifs">Tarifs</a><a href="#realisations">Réalisations</a><a href="#contact">Contact</a></div>
+    <div><h3>Nos services</h3><a href="#services">Réseaux sociaux</a><a href="#services">Visuels & vidéos</a><a href="#services">Publicité en ligne</a><a href="#services">Sites web</a></div>
+  </div>
+  <div class="container copyright">© 2026 ÉQUIPE Agence — Tous droits réservés.</div>
+</footer>
+<a class="wa" href="https://wa.me/2250502275509" target="_blank" aria-label="WhatsApp">◉</a>
+</body>
+</html>
